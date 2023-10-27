@@ -1,0 +1,15 @@
+version: "4.24.2"
+services:
+  app:  
+    build: .
+    ports:
+      - "6000:6000" 
+    links:
+      - mongDB 
+  mongDB:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=gredys9 
+      - MONGO_INITDB_ROOT_PASSWORD=morales
